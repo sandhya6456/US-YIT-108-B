@@ -1,0 +1,175 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+.nav-container {
+    background-color: #4dc7d9;
+    overflow: hidden;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 22px 16px;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+nav a:hover {
+    background-color: #555; /* Darker background color on hover */
+}
+
+#chat-container {
+    max-height: 700px;
+    max-width: 600px; /* Set your desired maximum width */
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    flex: 1; /* Take up remaining vertical space */
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Set the position to fixed */
+    bottom: 0; /* Place it at the bottom of the viewport */
+    left: 50%; /* Center horizontally */
+transform: translateX(-50%); /* Adjust for half of the container's width */
+justify-content: center;
+align-items: center;
+}
+
+#chat-messages {
+border-bottom: 1px solid #ccc;
+margin-bottom: 10px;
+padding-bottom: 10px;
+flex: 1; 
+overflow-y: auto; 
+max-height: 350px; 
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    word-wrap: break-all; /* Add margin between each message */
+}
+
+.user-image {
+    width: 30px; /* Set the width of the user image */
+    height: 30px; /* Set the height of the user image */
+    border-radius: 50%; /* Optional: Round the corners of the user image */
+    margin-right: 8px;
+    display: inline-flex;
+   /* Optional: Add some spacing between the user image and text */
+}
+
+.bot-image {
+    width: 30px; /* Set the width of the bot image */
+    height: 30px; /* Set the height of the bot image */
+    border-radius: 50%; /* Optional: Round the corners of the bot image */
+    margin-right: 8px; /* Optional: Add some spacing between the bot image and text */
+}
+#first-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#user-input {
+    display: flex;
+    flex-wrap: wrap; /* Allow flex items to wrap to the next line */
+    max-width: 545px; /* Set the maximum width for user input */
+    margin-top: 10px;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #e0e0e0;
+}
+
+#message-input {
+    flex: 1;
+padding: 8px;
+width: calc(100% - 8px);
+box-sizing: border-box; /* Include padding in the width calculation */
+width: 100%;
+}
+
+button {
+    padding: 8px;
+}
+
+.generate {
+    border: none;
+    width: 15em;
+    height: 5em;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: #1C1A1C;
+    cursor: pointer;
+    transition: all 450ms ease-in-out;
+}
+
+.sparkle {
+    fill: #AAAAAA;
+    transition: all 800ms ease;
+}
+
+.text {
+    font-weight: 600;
+    color: #AAAAAA;
+    font-size: medium;
+}
+
+.generate:hover {
+    background: linear-gradient(0deg, #A47CF3, #683FEA);
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+    0px 0px 180px 0px #9917FF;
+    transform: translateY(-2px);
+}
+
+.generate:hover .text {
+    color: white;
+}
+
+.generate:hover .sparkle {
+    fill: white;
+    transform: scale(1.2);
+}
+
+/* Add this CSS to your stylesheet or within a <style> tag in the HTML document */
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
